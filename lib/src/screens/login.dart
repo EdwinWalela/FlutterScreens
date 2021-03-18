@@ -8,12 +8,16 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(margin: EdgeInsets.only(top: 30.0)),
+          Container(margin: EdgeInsets.only(top: 20.0)),
           logo(),
           formHeader(),
-          Expanded(
-            child: form(),
-          ),
+          form(),
+          Container(margin: EdgeInsets.only(top: 30.0)),
+          socialHeader(),
+          Container(margin: EdgeInsets.only(top: 30.0)),
+          socialButtonRow(),
+          Container(margin: EdgeInsets.only(top: 30.0)),
+          socialFooter()
         ],
       ),
     );
@@ -106,6 +110,114 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget socialHeader() {
+    return Center(
+      child: Text(
+        '- Or sign in with -',
+        style: TextStyle(
+          fontSize: 14.0,
+          letterSpacing: 0.8,
+        ),
+      ),
+    );
+  }
+
+  Widget socialButtonRow() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(margin: EdgeInsets.only(right: 20)),
+        googleSocial(),
+        Container(margin: EdgeInsets.only(right: 20)),
+        facebookSocial(),
+        Container(margin: EdgeInsets.only(right: 20)),
+        twitterSocial(),
+        Container(margin: EdgeInsets.only(right: 20)),
+      ],
+    );
+  }
+
+  Widget googleSocial() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(35, 10, 35, 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 3,
+            offset: Offset(1, 3),
+          ),
+        ],
+      ),
+      child: Image.asset(
+        './assets/google.png',
+        fit: BoxFit.fill,
+        width: 25,
+      ),
+    );
+  }
+
+  Widget facebookSocial() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(35, 10, 35, 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 3,
+            offset: Offset(1, 3),
+          ),
+        ],
+      ),
+      child: Image.asset(
+        './assets/fb.png',
+        fit: BoxFit.fill,
+        width: 15,
+      ),
+    );
+  }
+
+  Widget twitterSocial() {
+    return Container(
+      padding: EdgeInsets.fromLTRB(35, 10, 35, 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            spreadRadius: 2,
+            blurRadius: 3,
+            offset: Offset(1, 3),
+          ),
+        ],
+      ),
+      child: Image.asset(
+        './assets/twitter.png',
+        fit: BoxFit.fill,
+        width: 35,
+      ),
+    );
+  }
+
+  Widget socialFooter() {
+    return Center(
+      child: Text(
+        "Don't have an account? Sign Up",
+        style: TextStyle(
+          fontSize: 14.0,
+          letterSpacing: 0.8,
         ),
       ),
     );
