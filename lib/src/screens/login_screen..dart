@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
       style: TextStyle(
-        fontSize: 20.0,
+        fontSize: 18.0,
       ),
     );
   }
@@ -90,7 +90,7 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
       style: TextStyle(
-        fontSize: 20.0,
+        fontSize: 19.0,
       ),
     );
   }
