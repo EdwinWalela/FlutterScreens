@@ -4,9 +4,11 @@ import 'package:flutter_svg/svg.dart';
 class LoginScreen extends StatelessWidget {
   Widget build(context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false, // Prevent keyboard overflow
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(margin: EdgeInsets.only(top: 50.0)),
+          Container(margin: EdgeInsets.only(top: 30.0)),
           logo(),
           formHeader(),
           Expanded(
@@ -18,15 +20,31 @@ class LoginScreen extends StatelessWidget {
   }
 
   Widget logo() {
-    return SvgPicture.asset(
-      'assets/mainlogo.svg',
-      alignment: Alignment.center,
+    return Center(
+      child: SvgPicture.asset(
+        'assets/mainlogo.svg',
+        width: 300,
+      ),
+    );
+  }
+
+  Widget formHeader() {
+    return Container(
+      margin: EdgeInsets.only(left: 35.0),
+      child: Text(
+        'Login to your Account',
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.w600,
+          color: Colors.black87,
+        ),
+      ),
     );
   }
 
   Widget form() {
     return Container(
-      margin: EdgeInsets.fromLTRB(50.0, 20.0, 50.0, 0),
+      margin: EdgeInsets.fromLTRB(35.0, 20.0, 35.0, 0),
       child: Column(
         children: [
           emailInput(),
@@ -39,21 +57,16 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget formHeader() {
-    return Text(
-      'Login to your Account',
-      style: TextStyle(
-        fontSize: 25.0,
-        fontWeight: FontWeight.w600,
-        color: Colors.blueGrey,
-      ),
-    );
-  }
-
   Widget emailInput() {
     return TextField(
       decoration: InputDecoration(
         hintText: 'Email',
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        ),
       ),
       style: TextStyle(
         fontSize: 20.0,
@@ -65,6 +78,12 @@ class LoginScreen extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: 'Password',
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+        ),
       ),
       style: TextStyle(
         fontSize: 20.0,
