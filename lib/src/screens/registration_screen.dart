@@ -4,27 +4,27 @@ import 'package:flutter_svg/svg.dart';
 class RegistrationScreen extends StatelessWidget {
   Widget build(context) {
     return Scaffold(
-        // resizeToAvoidBottomInset: false, // Prevent keyboard overflow
-        body: ListView(
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(margin: EdgeInsets.only(top: 20.0)),
-            logo(),
-            formHeader(),
-            form(),
-            Container(margin: EdgeInsets.only(top: 20.0)),
-            socialHeader(),
-            Container(margin: EdgeInsets.only(top: 20.0)),
-            socialButtonRow(),
-            Container(margin: EdgeInsets.only(top: 25.0)),
-            socialFooter(),
-            Container(margin: EdgeInsets.only(top: 25.0)),
-          ],
-        ),
-      ],
-    ));
+      body: ListView(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(margin: EdgeInsets.only(top: 20.0)),
+              logo(),
+              formHeader(),
+              form(),
+              Container(margin: EdgeInsets.only(top: 20.0)),
+              socialHeader(),
+              Container(margin: EdgeInsets.only(top: 20.0)),
+              socialButtonRow(),
+              Container(margin: EdgeInsets.only(top: 25.0)),
+              socialFooter(),
+              Container(margin: EdgeInsets.only(top: 25.0)),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 
   Widget logo() {
