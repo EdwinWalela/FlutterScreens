@@ -9,7 +9,7 @@ class RegistrationScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(margin: EdgeInsets.only(top: 20.0)),
+              Container(margin: EdgeInsets.only(top: 10.0)),
               logo(),
               formHeader(),
               form(),
@@ -31,7 +31,7 @@ class RegistrationScreen extends StatelessWidget {
     return Center(
       child: SvgPicture.asset(
         'assets/mainlogo.svg',
-        width: 200,
+        width: 250,
       ),
     );
   }
